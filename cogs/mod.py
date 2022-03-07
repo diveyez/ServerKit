@@ -56,7 +56,12 @@ class mod(commands.Cog):
                 embed = discord.Embed(title = "😔 You've been kicked", description = f'{ctx.author.name}#{ctx.author.discriminator} has kicked you for `{reasonFormatted}`', color = self.client.color)
                 await dm.send(embed = embed)
             except discord.Forbidden:
-                embed = discord.Embed(title = "😕 Kick failed", description = f"Are they above you/the bot? Do you have the kick permission? Or you want to kick yourself? Try again!", color = self.client.color)
+                embed = discord.Embed(
+                    title="😕 Kick failed",
+                    description="Are they above you/the bot? Do you have the kick permission? Or you want to kick yourself? Try again!",
+                    color=self.client.color,
+                )
+
                 if normalCommand:
                     await ctx.send(embed = embed, reference = ctx.message)
                 else:
@@ -90,7 +95,12 @@ class mod(commands.Cog):
                 embed = discord.Embed(title = "😔 You've been banned", description = f'{ctx.author.name}#{ctx.author.discriminator} has banned you for `{reason}`', color = self.client.color)
                 await dm.send(embed = embed)
             except discord.Forbidden:
-                embed = discord.Embed(title = "😕 Ban failed", description = f"Are they above you/the bot? Do you have the ban permission? Or you want to ban yourself? Try again!", color = self.client.color)
+                embed = discord.Embed(
+                    title="😕 Ban failed",
+                    description="Are they above you/the bot? Do you have the ban permission? Or you want to ban yourself? Try again!",
+                    color=self.client.color,
+                )
+
                 if normalCommand:
                     await ctx.send(embed = embed, reference = ctx.message)
                 else:

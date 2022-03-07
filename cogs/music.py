@@ -77,8 +77,7 @@ class music(commands.Cog):
         if voice and voice.is_connected():
             await voice.disconnect()
         else:
-            connected = ctx.author.voice
-            if connected:
+            if connected := ctx.author.voice:
                 await connected.channel.connect()
             channel = ctx.author.voice.channel.name
         embed = discord.Embed(title = '➕ Joined channel!', description = f'Check `{channel}` if I joined!', color = self.client.color)

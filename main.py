@@ -30,11 +30,7 @@ else:
 
 slash = SlashCommand(client, override_type = True, sync_commands=True, sync_on_cog_reload=True)
 
-if os.getenv("PRODUCTION") == "True":
-    client.color = 0x7289da
-else:
-    client.color = 0xffb600
-
+client.color = 0x7289da if os.getenv("PRODUCTION") == "True" else 0xffb600
 if os.getenv("PRODUCTION") == "True":
     client.version = "Alpha 0.3.5.1"
 else:

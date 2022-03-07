@@ -39,8 +39,8 @@ class info(commands.Cog):
             await ctx.send(embed = embed)
 
     async def help(self, ctx, normalCommand, arg=None):
-        cogs = [c for c in self.client.cogs.keys()]
-        if arg == None:
+        cogs = list(self.client.cogs.keys())
+        if arg is None:
             embed = discord.Embed(title = 'ℹ️ Important commands', color = self.client.color)
             embed.description = f'Here are a list of some important commands in the bot, prefix are `{self.client.command_prefix}` and `/`.\nType `{self.client.command_prefix}help (command)` for more info.\nType `{self.client.command_prefix}help 2` for miscellaneous commands.'
             embed.add_field(name = '🔨 Moderation', value = '`ban` `kick` `mute*` `warn*`', inline = True)
@@ -66,7 +66,7 @@ class info(commands.Cog):
                         embed.add_field(name = 'Alias(es)', value = command.aliases, inline = True)
                         noCommand = False 
                         break
-            if noCommand == True:    
+            if noCommand:    
                 embed = discord.Embed(title = "Ayo this command doesn't exist!", color = self.client.color)
                 embed.description = 'Did you made a typo, or are you curious as to if this command exists? Try again!'
         if normalCommand:
